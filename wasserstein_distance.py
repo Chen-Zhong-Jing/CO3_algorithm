@@ -36,15 +36,16 @@ for e in range(nEpoch):
             Grad = (Grad - GradMean) / GradStd
 
             GradSample = np.random.choice(Grad, nSample)
+            GradSample = np.sort(GradSample)
 
             paramGau = stats.norm.fit(Grad)
-            WassDist[l, e, 0] += W(2, stats.norm.ppf(np.linspace(0, 1, nSample), loc=paramGau[0], scale=paramGau[1]),np.sort(GradSample))
+            WassDist[l, e, 0] += W(2, stats.norm.ppf(np.linspace(0, 1, nSample), loc=paramGau[0], scale=paramGau[1]), GradSample)
             
             paramLap = stats.laplace.fit(Grad)
-            WassDist[l, e, 1] += W(2, stats.laplace.ppf(np.linspace(0, 1, nSample), loc=paramLap[0], scale=paramLap[1]),np.sort(GradSample))
+            WassDist[l, e, 1] += W(2, stats.laplace.ppf(np.linspace(0, 1, nSample), loc=paramLap[0], scale=paramLap[1]), GradSample)
             
             ParamGenArr[l,e] = stats.gennorm.fit(Grad)
-            WassDist[l, e, 2] += W(2, stats.gennorm.ppf(np.linspace(0, 1, nSample), ParamGenArr[l,e,0], loc=ParamGenArr[l,e,1],scale=ParamGenArr[l,e,2]), np.sort(GradSample))
+            WassDist[l, e, 2] += W(2, stats.gennorm.ppf(np.linspace(0, 1, nSample), ParamGenArr[l,e,0], loc=ParamGenArr[l,e,1],scale=ParamGenArr[l,e,2]), GradSample)
 
 
 
