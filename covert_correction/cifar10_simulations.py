@@ -22,7 +22,7 @@ from tensorflow.keras.datasets import cifar10
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from models.cifar10_models import build_model
 import torch
-from csvec import CSVec
+from pack.csvec import CSVec
 from pack.dweibull_quantizer import dweibullquantizer
 # Compressions
 # from utils.fp8 import fp8_152_bin_edges
