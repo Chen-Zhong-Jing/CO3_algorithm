@@ -2,8 +2,6 @@
 
 There are several compression scheme in this code.
 ## CO3 Algorithm
-The Huffman compression can improve the compression rate but not influence the model convergence(classification accuracy), so this source code only includes the fp convertion and error-correction.
-
 #### Convert
 There are two types you can use for quantization, fp4 and fp8, which follow the IEEE 754 format.
 - fp4: [sign, exponent, mantissa] = [1,2,1]
