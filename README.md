@@ -11,7 +11,7 @@ There are two types you can use for quantization, fp4 and fp8, which follow the 
 There is a error correction coefficient in this algorithm, which can control the magnitude of error term.
 
 ## Count Sketch
-The Sketch code is from [csvec](https://github.com/nikitaivkin/csh)  
+The Count Sketch code is from [CSVec](https://github.com/nikitaivkin/csh)  
 Reference: [FetchSGD: Communication-Efficient Federated Learning with Sketching](https://proceedings.mlr.press/v119/fu20c.html)
 
 ## TinyScript
